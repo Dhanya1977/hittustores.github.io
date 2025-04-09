@@ -1,0 +1,127 @@
+<html>
+<body bgcolor="pink">
+<p> SSLC Result</p>
+Enter Student Name : <br>
+<input type="text" id="n"><br>
+
+Enter kannada marks : <br>
+<input type="number" id="k"><br>
+
+Enter English marks : <br>
+<input type="number" id="e"><br>
+
+Enter Hindi marks : <br>
+<input type="number" id="h"><br>
+
+Enter Maths marks : <br>
+<input type="number" id="m"><br>
+
+Enter Science marks : <br>
+<input type="number" id="s"><br>
+
+Enter Social marks : <br>
+<input type="number" id="ss"><br>
+
+
+Total Marks is:
+<input type="text" id="tot">
+
+<input type="button" value="cal total" onclick="total()"><br>
+
+Percentage is:
+<input type="text" id="per">
+
+<input type="button" value="cal Per" onclick="perc()"><br>
+
+<input type="button" value="Dispaly result" onclick="result()"><br><br>
+
+<p id="r">  </p>
+
+<script>
+function total()
+{
+k=parseFloat(document.getElementById("k").value);
+
+e=parseFloat(document.getElementById("e").value);
+
+h=parseFloat(document.getElementById("h").value);
+
+m=parseFloat(document.getElementById("m").value);
+
+sc=parseFloat(document.getElementById("s").value);
+
+ss=parseFloat(document.getElementById("ss").value);
+
+t=k+e+h+m+sc+ss;
+document.getElementById('tot').value=t;
+}
+
+function perc()
+{
+k=parseFloat(document.getElementById("k").value);
+
+e=parseFloat(document.getElementById("e").value);
+
+h=parseFloat(document.getElementById("h").value);
+
+m=parseFloat(document.getElementById("m").value);
+
+sc=parseFloat(document.getElementById("s").value);
+
+ss=parseFloat(document.getElementById("ss").value);
+
+t=k+e+h+m+sc+ss;
+
+p=(t/625)*100;
+
+document.getElementById('per').value=p;
+
+}
+
+function result()
+
+{
+k=parseFloat(document.getElementById("k").value);
+
+e=parseFloat(document.getElementById("e").value);
+
+h=parseFloat(document.getElementById("h").value);
+
+m=parseFloat(document.getElementById("m").value);
+
+sc=parseFloat(document.getElementById("s").value);
+
+ss=parseFloat(document.getElementById("ss").value);
+
+t=k+e+h+m+sc+ss;
+p=(t/625)*100;
+
+
+if(k<44 || e<35 || h<35 || m<35 || sc<35 || ss<35)
+document.getElementById("r").innerHTML="Fail";
+else if(p>=90)
+document.getElementById("r").innerHTML="Dist";
+else if(p<90 && p>=60)
+document.getElementById("r").innerHTML="First Class";
+else if(p<60 && p>=50)
+document.getElementById("r").innerHTML="Second Class";
+else
+document.getElementById("r").innerHTML="Pass";
+}
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
